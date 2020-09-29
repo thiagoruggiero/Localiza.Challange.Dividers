@@ -1,8 +1,50 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
 }
+@model NumberModel
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET CoreT</a>.</p>
+
+    @using (Html.BeginForm("Calculate", "Home"))
+    {
+        @Html.TextBoxFor(m => m.Number)
+
+        <button type="submit">Calcular</button>
+
+    }
 </div>
+<br />
+<br />
+<br />
+<div class="text-center">
+
+    <label>Todos os Divisores</label>
+    <table align="center">
+        @foreach (var item in Model.Dividers.AllDividers)
+        {
+            <tr>
+                <td>
+                    @item
+                </td>
+            </tr>
+        }
+    </table>
+
+    <label>Todos os Divisores</label>
+    <table align="center">
+        @foreach (var item in Model.Dividers.PrimeDividers)
+        {
+            <tr>
+                <td>
+                    @item
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+
+
+

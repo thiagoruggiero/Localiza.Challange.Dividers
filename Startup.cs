@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Localiza.Challange.Dividers.Services;
+using Localiza.Challange.Dividers.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +35,7 @@ namespace Localiza.Challange.Dividers
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton<IDividersService, DividersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
