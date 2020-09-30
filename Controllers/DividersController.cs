@@ -19,8 +19,14 @@ namespace Localiza.Challange.Dividers.Controllers
             _dividersService = dividersService;
         }
 
+        /// <summary>
+        /// Endpoint criado para reutilização de outras aplicações
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns>Retorna lista de divisores e lista de  divisores primos</returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult GetDividers([FromQuery] int number)
         {
             var responseDividers = _dividersService.GetDividers(number);

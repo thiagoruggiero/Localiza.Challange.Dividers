@@ -17,33 +17,42 @@
 <br />
 <br />
 <br />
+
 <div class="text-center">
+    @if (Model.Dividers.AllDividers.Count > 0)
+    {
+        <label>Todos os Divisores</label>
+        <table align="center">
+            @foreach (var item in Model.Dividers.AllDividers)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </table>
 
-    <label>Todos os Divisores</label>
-    <table align="center">
-        @foreach (var item in Model.Dividers.AllDividers)
-        {
-            <tr>
-                <td>
-                    @item
-                </td>
-            </tr>
-        }
-    </table>
+    }
 
-    <label>Divisores Primos</label>
-    <table align="center">
-        @foreach (var item in Model.Dividers.PrimeDividers)
-        {
-            <tr>
-                <td>
-                    @item
-                </td>
-            </tr>
-        }
-    </table>
 
+    @if (Model.Dividers.PrimeDividers.Count > 0)
+    {
+        <label>Divisores Primos</label>
+        <table align="center">
+            @foreach (var item in Model.Dividers.PrimeDividers)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </table>
+    }
 </div>
+
+
 
 
 

@@ -5,10 +5,15 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\PROCESSO SELETIVO\Localiza.Challange.Dividers\Localiza.Challange.Dividers\Localiza.Challange.Dividers.xml</DocumentationFile>
+  </PropertyGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.0" />
   </ItemGroup>
 
 </Project>

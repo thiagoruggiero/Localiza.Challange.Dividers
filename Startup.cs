@@ -36,6 +36,7 @@ namespace Localiza.Challange.Dividers
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IDividersService, DividersService>();
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +62,13 @@ namespace Localiza.Challange.Dividers
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                    "v1");
             });
         }
     }
